@@ -1,0 +1,22 @@
+server:
+  port: 8080
+logging:
+  level:
+    org:
+      springframework: WARN
+spring:
+  profiles:
+    active: "DEV"
+  springdoc:
+    api-docs:
+      enabled: ${env.API_DOCS_ENABLED:on}
+      path: http://localhost:8080/tournament-api-docs
+    swagger-ui:
+      tags-sorter: 'alpha'
+      operations-sorter: 'alpha'
+  main:
+    web-application-type: none
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  flyway:
+    enabled: false
